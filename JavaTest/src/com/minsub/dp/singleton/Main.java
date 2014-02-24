@@ -14,9 +14,6 @@ public class Main {
 		Singleton s2 = Singleton.getInstance();
 		System.out.println("s2.a is " + s2.getA());
 		
-		
-		s2.setA(0);
-		System.out.println("s.a is " + s.getA());
 	}
 
 }
