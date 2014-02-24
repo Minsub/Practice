@@ -10,6 +10,10 @@ public class Test {
 		abs = new Child(3);
 		inf = new Child();
 		
+		abs.test1();
+		
+		abs.test2();
+		
 	}
 
 }
