@@ -14,6 +14,15 @@ public class Test {
 		
 		abs.test2();
 		
+		
+		int tmp = 1;
+		for (int i = 1; i <= 10; i++) {
+			System.out.print(tmp + " x " + i + " = " );
+			tmp = tmp * i;
+			System.out.println(tmp);
+		}
+		System.out.println("result: " + tmp);
+
 	}
 
 }
