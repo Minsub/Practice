@@ -1,15 +1,21 @@
 package com.minsub.dp.singleton;
 
 public class Singleton {
-	private static Singleton instance = null;
+	private volatile static Singleton instance = null;
 	
 	// Closed Constructor
 	private Singleton() {};
 	
 	// Singleton Constructor
-	public static synchronized Singleton getInstance() {
+	public static Singleton getInstance() {
 		if (instance == null) {
-			instance = new Singleton();
+			
+			// 처음 한번만 인스턴스를 생성 
+			synchronized (Singleton.class) {
+				if (instance == null) {
+					instance = new Singleton();
+				}
+			}
 		}
 		return instance;
 	}	
