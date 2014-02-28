@@ -1,5 +1,7 @@
 package com.minsub.althorism;
 
+import java.util.Scanner;
+
 /**
  * 너비가 같은 N개의 나무 판자를 붙여 세운 울타리가 있습니다. 시간이 지남에 따라 판자들이 부러지거나 망가져 높이가 다 달라진 관계로
  * 울타리를 통째로 교체하기로 했습니다. 이 때 버리는 울타리의 일부를 직사각형으로 잘라내 재활용하고 싶습니다. 그림 (b)는 (a)의
@@ -31,7 +33,35 @@ package com.minsub.althorism;
 public class Fence {
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		
+		int nCnt = sc.nextInt();
+		
+		if (nCnt > 50 || nCnt <=0) {
+			return;
+		}
+		
+		int nFenceCnt;	//Fence 길이
+		int[] arrFence; //각 Fence 길이가 저장된 배열 
+		for (int i = 0; i < nCnt; i++) {
+			nFenceCnt = sc.nextInt();
+			arrFence = new int[nFenceCnt];
+			for (int j = 0; j < nFenceCnt; j++) {
+				arrFence[j] = sc.nextInt();
+			}
+			
+			System.out.println(getArea(nFenceCnt, arrFence));
+		}
+	}
+	
+	/**
+	 * @param length fence의 갯수 
+	 * @param arr int[]로 fence의 모든 높이 
+	 * @return 최대 사각형의 넓이 
+	 */
+	public static int getArea(int length, int[] arr) {
+		
+		return 0;
 	}
 
 }

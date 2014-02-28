@@ -11,17 +11,12 @@ public class Main {
 		Unit unit1 = Barrack.createUnit(UNIT_PACKAGE + UNIT_MARINE);
 		if (unit1 != null) {
 			unit1.attack();
-		} else {
-			System.out.println("unit1 is NULL");
-		}
+		} 
 		
 		// Medic으로 유닛 만들기 
 		Unit unit2 = Barrack.createUnit(UNIT_PACKAGE + UNIT_MEDIC);
 		if (unit2 != null) {
 			unit2.attack();
-		} else {
-			System.out.println("unit2 is NULL");
-		}
+		} 
 	}
-
 }

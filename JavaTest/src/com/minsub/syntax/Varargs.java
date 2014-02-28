@@ -1,6 +1,5 @@
 package com.minsub.syntax;
 
-import java.util.Vector;
 
 public class Varargs {
 
