@@ -1,8 +1,14 @@
 package com.minsub;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 
 		TestAbstract abs;
 		TestInterface inf;
@@ -23,6 +29,19 @@ public class Test {
 		}
 		System.out.println("result: " + tmp);
 		
+		Boolean a = Boolean.valueOf(true);
+		Boolean b = Boolean.valueOf(true);
+		
+		String aa = String.valueOf("aaa");
+		String bb = new String("aaa");
+		
+		
+		if (aa == bb){
+			System.out.println("TRE");
+		}
+		
+		InputStream is; 
+		is = new BufferedInputStream(new FileInputStream(new File("java.txt")) );		
 	}
 
 }
