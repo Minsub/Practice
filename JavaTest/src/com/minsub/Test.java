@@ -1,10 +1,8 @@
 package com.minsub;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
 
@@ -40,8 +38,14 @@ public class Test {
 			System.out.println("TRE");
 		}
 		
-		InputStream is; 
-		is = new BufferedInputStream(new FileInputStream(new File("java.txt")) );		
+		String aaa = new String("AAA");
+		aa(aaa);
+		System.out.println(aaa);
+		
+	}
+	
+	static void aa(String aaa) {
+		aaa = "asdasd";
 	}
 
 }
