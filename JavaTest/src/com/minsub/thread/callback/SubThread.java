@@ -26,15 +26,14 @@ public class SubThread extends Thread {
 	@Override
 	public void run() {
 		for (int i = 0; i < value; i++) {
-			System.out.print(i);
+			System.out.println("SUB: " + i);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				System.out.println("INTERRUPT EXCEPTION:" + getTimeNow());
+				System.out.println("SUB: INTERRUP EXCEPTION:" + getTimeNow());
 				return;
 			}
 		}
-		System.out.println();
 		callback.Tfinish();
 	}
 

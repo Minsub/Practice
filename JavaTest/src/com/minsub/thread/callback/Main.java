@@ -14,38 +14,39 @@ public class Main extends Thread implements CallBackInter{
 	
 	@Override
 	public void run() {
-		System.out.println("<<Start Main Thread>> " + getTimeNow());
-		Thread thread = new SubThread(6, this);
-		thread.start();
-		
-		try {
-			synchronized (Thread.currentThread()) {
-				Thread.currentThread().wait(3000);
-			}
-						
-			thread.interrupt();
+		int cnt = 0;
+		while (cnt++ < 5) {
+			System.out.println("MAIN: START, " + getTimeNow());
+			Thread thread = new SubThread(3, this);
+			thread.start();
 			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				synchronized (this) {
+					System.out.println("MAIN: 5ÃÊ ´ë±â");
+					this.wait(10000);
+				}
+							
+				thread.interrupt();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			System.out.println("MAIN: END,  " + getTimeNow());
 		}
-		
-		System.out.println("<<END Main Thread>> " + getTimeNow());
 	}
 
 	@Override
 	public void Tfinish() {
-		System.out.println("FINISH SUB THREAD");
+		System.out.println("SUB: call finish() in CallBack");
 		
-		synchronized (Thread.currentThread()) {
-			Thread.currentThread().notify();
+		synchronized (this) {
+			this.notify();
 		}
 		
 	}
 
 	@Override
 	public void Tinterrupt() {
-		System.out.println("INTERRUPT SUB THREAD");
 	}
 	
 	public static void main(String[] args) {
