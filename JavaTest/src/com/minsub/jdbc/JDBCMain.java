@@ -8,13 +8,13 @@ public class JDBCMain {
 	public static final String CLASS_NAME_DBMS_DB2 = "com.minsub.jdbc.db2.DB2JDBC";
 
 	public static void main(String[] args) {
-		// Factory¸¦ ÅëÇØ StringÀ¸·Î ÀÔ·Â¹ÞÀº DBÁ¾·ù·Î JDBC °´Ã¼¸¦ »ý¼º 
+		// Factoryï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Stringï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¹ï¿½ï¿½ï¿½ DBï¿½ï¿½ï¿½ï¿½ï¿½ JDBC ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ 
 		JDBC jdbc = FactoryJDBC.createJDBC(CLASS_NAME_DBMS_DB2);
 		if (jdbc != null) {
 			JDBCMain main = new JDBCMain();
 			main.selectAll(jdbc);
 
-			main.insert(jdbc);
+			//main.insert(jdbc);
 			jdbc.close();
 		}
 

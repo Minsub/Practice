@@ -1,54 +1,56 @@
 package com.minsub.jms;
 
-import javax.jms.Connection;
-import javax.jms.ConnectionFactory;
-import javax.jms.MessageConsumer;
-import javax.jms.MessageProducer;
+import javax.jms.DeliveryMode;
 import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
 import javax.jms.Session;
 import javax.jms.TextMessage;
-import javax.naming.Context;
 import javax.naming.InitialContext;
-
-
-
 
 public class Sender {
 
 	public static void main(String[] args) {
-		try {
-			// Getting a ConnectionFactory
-			Context messaging = new InitialContext();
-			ConnectionFactory connectionFactory = (ConnectionFactory)messaging.lookup("ConnectionFactory");
-			
-			// Getting a Destination
-			Queue stockQueue;
-			stockQueue = (Queue)messaging.lookup("StockSource");
-			
-			// Creating a Connection
-			Connection connection = connectionFactory.createConnection();
-			
-			// Creating a Session
-			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			
-			// Creating a Message Producer
-			MessageProducer sender = session.createProducer(stockQueue);
-			
-			// Creating a Message COnsumer
-			MessageConsumer receiver = session.createConsumer(stockQueue);
-			
-			connection.start();
-			
-			String stockData = "Hello World"; /* Stock information as a string */
-			TextMessage message;
-
-			/* Set the message's text to be the stockData string */
-			message = session.createTextMessage();
-			message.setText(stockData);
-			
+		try {	
+			// get the initial context
+			InitialContext ctx;
+			ctx = new InitialContext();
+		
+			// lookup the queue object
+			Queue queue = (Queue) ctx.lookup("queue/queue0");
+			                                                                   
+			// lookup the queue connection factory
+			QueueConnectionFactory connFactory = (QueueConnectionFactory) ctx.lookup("queue/connectionFactory");
+			                                                                   
+			// create a queue connection
+			QueueConnection queueConn = connFactory.createQueueConnection();
+			                                                                   
+			// create a queue session
+			QueueSession queueSession = queueConn.createQueueSession(false,
+			    Session.DUPS_OK_ACKNOWLEDGE);
+			                                                                   
+			// create a queue sender
+			QueueSender queueSender = queueSession.createSender(queue);
+			queueSender.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+			                                                                   
+			// create a simple message to say "Hello"
+			TextMessage message = queueSession.createTextMessage("Hello");
+			                                                                   
+			// send the message
+			queueSender.send(message);
+			                                                                   
+			// print what we did
+			System.out.println("sent: " + message.getText());
+			                                                                   
+			// close the queue connection
+			queueConn.close();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 		
 	}
 

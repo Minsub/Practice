@@ -11,6 +11,7 @@ public class TestLog4j {
 	public static void main(String[] args) {
 		logger.info("info message");
 		logger.debug("debug message");
+				
 	}
 
 }

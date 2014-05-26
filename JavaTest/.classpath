@@ -20,5 +20,7 @@
 	<classpathentry kind="lib" path="lib_ocr/ridl-3.2.1.jar"/>
 	<classpathentry kind="lib" path="lib_ocr/unoil-3.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.2.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
