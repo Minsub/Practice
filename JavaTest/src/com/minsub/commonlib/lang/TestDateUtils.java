@@ -5,16 +5,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.commons.lang3.time.DateUtils;
-import org.apache.commons.lang3.time.FastDateFormat;
+import org.apache.commons.lang.time.DateFormatUtils;
+import org.apache.commons.lang.time.DateUtils;
+import org.apache.commons.lang.time.FastDateFormat;
 
 import com.minsub.utils.PerformanceTest;
 
 /**
  * DateUtils
  * 
- * StopWatchµµ ÀÖÀ½
+ * StopWatchï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  * @author hmm1115222
  *
  */
@@ -39,7 +39,7 @@ public class TestDateUtils {
 		String sDate2 = sd.format(date2);
 		System.out.println(sDate2);
 		
-		// CAlendar¸¦ ÀÌ¿ëÇÑ °è»ê
+		// CAlendarï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.DAY_OF_YEAR, 1);
 		

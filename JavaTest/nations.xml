@@ -4,4 +4,8 @@
 	<name>KOR</name>
 	<name>RUS</name>
 	<name>NAM</name>
+	
+	<test id='qwe' url="aaa">
+		<property url="bbb"> Property value</property>
+	</test>
 </nations>

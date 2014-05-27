@@ -1,8 +1,11 @@
-package com.minsub.api;
+package com.minsub.api; 
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.XMLConfiguration;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
@@ -10,7 +13,12 @@ import org.jdom2.input.SAXBuilder;
 
 public class DomPaser {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
+//		usingSAX();
+		usingCommonConf();
+	}
+	
+	public static void usingSAX() {
 		try {
 		   SAXBuilder builder = new SAXBuilder();
 		   Document doc = builder.build(new File("nations.xml"));
@@ -25,10 +33,29 @@ public class DomPaser {
 				   System.out.println(item.getText());
 			   }
 		   }
-		   
+			   
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
 	
+	public static void usingCommonConf() throws ConfigurationException {
+		XMLConfiguration xml = new XMLConfiguration("nations.xml");
+		
+		List<Object> list = xml.getList("name");
+
+		
+		System.out.println(list.size());
+		
+		for(Object item: list)
+			System.out.println((String)item);
+		
+		Iterator<String> iter = xml.getKeys();
+		
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		
+		System.out.println("EMAIL: "+ xml.getString("test[@url]"));
 	}
 }

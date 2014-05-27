@@ -1,10 +1,10 @@
 package com.minsub.commonlib.lang;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 /**
- * ¸¹Àº ±â´ÉµéÀÌ ±âº» String Å¬·¡½ºÀÇ ¸Þ¼Òµå·Î ÁöŸcÇÑ´Ù.
- * ÇÏÁö¸¸, °¡Àå Áß¿äÇÑÁ¡Àº NULL¿¡ ´ëÇÑ Ã³¸®¸¦ ÇØÁØ´Ù´Â°ÍÀÌ´Ù.
- * ÀÌ°Ô Æ÷ÀÎÆ®!!
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Éµï¿½ï¿½ï¿½ ï¿½âº» String Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½ï¿½ ï¿½ï¿½ï¿½cï¿½Ñ´ï¿½.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NULLï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø´Ù´Â°ï¿½ï¿½Ì´ï¿½.
+ * ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®!!
  * 
  * @author Minsub Ji
  *
@@ -45,7 +45,7 @@ public class TestStringUtils {
 		String str = "Hello World!";
 		System.out.println("abbreviate: "+StringUtils.abbreviate(str,8, 10));
 
-		//´ë¹®ÀÚ
+		//ï¿½ë¹®ï¿½ï¿½
 		str = "hi everyone. i am minsub";
 		System.out.println("capitalize: " + StringUtils.capitalize(str));
 		

@@ -5,7 +5,7 @@
 <configuration>
 	
 	<!-- DB정보 파일을 로드 -->
-	<properties resource="db.properties" />
+	<properties resource="cubrid.properties" />
 	
 	<environments default="development">
     	<environment id="development">
@@ -22,5 +22,7 @@
 	<!-- Mapper 설정 -->
   	<mappers>
     	<mapper resource="com/minsub/mybatis/mybatis-mapper.xml"/>
+    	<mapper class="com.minsub.mybatis.AnnotationMapper" />
+    	<mapper class="com.minsub.mybatis.AnnotationMapper2" />
   	</mappers>
 </configuration>
