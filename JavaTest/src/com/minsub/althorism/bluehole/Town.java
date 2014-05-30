@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 /*
- <Input1.txt ¿øº» µ¥ÀÌÅÍ>
+ <Input1.txt ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½>
  5 4
  0 12 9 4 12
  12 0 7 3 10
@@ -19,7 +19,7 @@ import java.io.FileWriter;
 /**
  * [Althorism for test of new Empolyee in Bluehole Studio]
  *
- * n°³ÁýÀÌ ´Ù ¿¬°áµÇ ÀÖ´Ù. n°³ÀÇ ÁýÀ» 2°³(A, B)·Î ³ª´­¶§, °¢ ±×·ì¾È¿¡ ÀÖ´Â ÁýµéÀº ¼­·Î T°Å¸® ¾ÈÀ¸·Î ¿¬°áÀÌ µÇ¾î ÀÖ¾î¾ß ÇÑ´Ù.
+ * nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½. nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½(A, B)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½×·ï¿½È¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Tï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
  * 
  * @author jiminsub
  */
@@ -34,7 +34,7 @@ public class Town {
 	private boolean[] visitedGroupB;
 	private boolean[] visitedTotal;
 
-	// Áý°¹¼ö, ÃÖ¼Ò°Å¸®, ±×·¡ÇÁ µ¥ÀÌÅÍ¸¦ Ã¤¿ò
+	// ï¿½ï¿½ï¿½, ï¿½Ö¼Ò°Å¸ï¿½, ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ Ã¤ï¿½ï¿½
 	private void readFile() {
 		try {
 			File file = new File(FILE_NAME_INPUT);
@@ -59,10 +59,10 @@ public class Town {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	} // end reafile()
 
-	// ÆÄÀÏ ÀÔÃâ·Â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	private void writeFile() {
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(
@@ -103,7 +103,7 @@ public class Town {
 	} // end writeFile()
 
 	/**
-	 * ½ÇÇà
+	 * ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void exec() {
 		readFile();
@@ -117,7 +117,7 @@ public class Town {
 		printVisited(visitedGroupA);
 
 		for (int i = 0; i < visitedGroupA.length; i++) {
-			if (!visitedGroupA[i]) { // GroupA¿¡ Æ÷ÇÔµÇÁö ¾Ê´Â v¸¦ Ã£À½
+			if (!visitedGroupA[i]) { // GroupAï¿½ï¿½ ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ vï¿½ï¿½ Ã£ï¿½ï¿½
 				dfs(visitedGroupB, i);
 				break;
 			}
