@@ -7,45 +7,12 @@ import java.util.List;
 public class Test {
 
 	public static void main(String[] args) throws FileNotFoundException {
-
-		TestAbstract abs;
-		TestInterface inf;
+		String aa = "S001227ABFBPC20140825134611001001";
+		String bb = aa.replace("ABFBPC", "ABFBQC");
 		
-		abs = new Child(3);
-		inf = new Child();
-		
-		abs.test1();
-		
-		abs.test2();
+		System.out.println(bb);
 		
 		
-		int tmp = 1;
-		for (int i = 1; i <= 10; i++) {
-			System.out.print(tmp + " x " + i + " = " );
-			tmp = tmp * i;
-			System.out.println(tmp);
-		}
-		System.out.println("result: " + tmp);
-		
-		Boolean a = Boolean.valueOf(true);
-		Boolean b = Boolean.valueOf(true);
-		
-		String aa = String.valueOf("aaa");
-		String bb = new String("aaa");
-		
-		
-		if (aa == bb){
-			System.out.println("TRE");
-		}
-		
-		String aaa = new String("AAA");
-		aa(aaa);
-		System.out.println(aaa);
-		
-	}
-	
-	static void aa(String aaa) {
-		aaa = "asdasd";
 	}
 
 }

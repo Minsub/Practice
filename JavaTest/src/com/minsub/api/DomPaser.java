@@ -15,7 +15,10 @@ public class DomPaser {
 
 	public static void main(String[] args) throws Exception{
 //		usingSAX();
-		usingCommonConf();
+		//usingCommonConf();
+		
+		String test = System.getProperty("office.home");
+		System.out.println(test);
 	}
 	
 	public static void usingSAX() {

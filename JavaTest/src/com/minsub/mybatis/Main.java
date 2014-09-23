@@ -26,7 +26,7 @@ public class Main {
             Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory  = new SqlSessionFactoryBuilder().build(reader);
              
-            session = sqlSessionFactory .openSession();
+            session = sqlSessionFactory.openSession();
             
             List<Item> list = session.selectList("Test.selectOneByDept", 30);
             
